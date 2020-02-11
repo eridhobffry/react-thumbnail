@@ -1,4 +1,5 @@
 import React, { useState, Fragment } from "react";
+import { Ul, Li } from "../styled/styled_main";
 
 const AppShowImage = () => {
   const image1 = require("../assets/images/image1.jpg");
@@ -9,25 +10,23 @@ const AppShowImage = () => {
   const [indexShowImage, setIndexShowImage] = useState(0);
   const [imageList, setImageList] = useState([image1, image2, image3, image4]);
 
-  const onClickImage = () => {};
-
   return (
     <Fragment>
       <img width={500} height={500} src={imageList[indexShowImage]} /> <br />
-      <ul>
+      <Ul>
         {imageList.map((image, index) => {
           return (
-            <li>
+            <Li>
               <img
                 src={image}
                 width={100}
                 height={100}
                 onClick={() => setIndexShowImage(index)}
               />
-            </li>
+            </Li>
           );
         })}
-      </ul>
+      </Ul>
     </Fragment>
   );
 };
